@@ -15,8 +15,11 @@ listDateTime <- strptime(paste(barchartds$Date, barchartds$Time), format = "%Y-%
 barchartds$DateTime<-listDateTime
 
 #draw line chart
-with(barchartds, plot(DateTime, Global_active_power, ylab ="Global Active Power (kilowatts)", xlab="", type = "l"))
+with(barchartds, plot(DateTime, Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab=""))
+with(barchartds, points(DateTime, Sub_metering_1, col = "black", type = "l", lwd =1))
+with(barchartds, points(DateTime, Sub_metering_2, col = "red", type = "l", lwd =1))
+with(barchartds, points(DateTime, Sub_metering_3, col = "purple", type = "l", lwd =1))
 
 #export line chart
-dev.copy(png, file = "plot2.png")
+dev.copy(png, file = "plot3.png")
 dev.off()
