@@ -20,6 +20,8 @@ with(barchartds, points(DateTime, Sub_metering_1, col = "black", type = "l", lwd
 with(barchartds, points(DateTime, Sub_metering_2, col = "red", type = "l", lwd =1))
 with(barchartds, points(DateTime, Sub_metering_3, col = "purple", type = "l", lwd =1))
 
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
 #export line chart
 dev.copy(png, file = "plot3.png")
 dev.off()
